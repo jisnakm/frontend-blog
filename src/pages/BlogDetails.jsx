@@ -40,7 +40,7 @@ const BlogDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`http://localhost:3000/api/v1/blog/update-blog/${id}`, {
+      const { data } = await axios.put(`http://localhost:3000s/api/v1/blog/update-blog/${id}`, {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,

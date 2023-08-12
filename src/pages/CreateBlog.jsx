@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
+import { Box, Button, InputLabel, TextField, Typography, ThemeProvider, createTheme  } from "@mui/material";
 import toast from "react-hot-toast";
+
+// Create a custom theme
+const theme = createTheme({
+  palette: {
+    black: {
+      main: '#212121',
+    },
+  },
+});
 
 const CreateBlog = () => {
   const id = localStorage.getItem("userId");
@@ -99,9 +108,12 @@ const CreateBlog = () => {
             variant="outlined"
             required
           />
-          <Button type="submit" color="primary" variant="contained">
+          <ThemeProvider theme={theme}>
+          <Button type="submit" color="black" style={{ color: 'white' }} variant="contained">
             SUBMIT
           </Button>
+          </ThemeProvider>
+          
         </Box>
       </form>
     </>

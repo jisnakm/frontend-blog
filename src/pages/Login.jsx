@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, ThemeProvider, createTheme  } from "@mui/material";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/store";
 import toast from "react-hot-toast";
+
+// Create a custom theme
+const theme = createTheme({
+  palette: {
+    black: {
+      main: '#212121',
+    },
+  },
+});
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -82,21 +92,24 @@ const Login = () => {
             required
             onChange={handleChange}
           />
-
+          <ThemeProvider theme={theme}>
           <Button
             type="submit"
             sx={{ borderRadius: 3, marginTop: 3 }}
             variant="contained"
-            color="primary"
+            color="black"
+            style={{ color: 'white' }}
           >
             Submit
           </Button>
           <Button
             onClick={() => navigate("/register")}
             sx={{ borderRadius: 3, marginTop: 3 }}
+            style={{ color: 'black' }}
           >
             Not a user ? Please Register
           </Button>
+          </ThemeProvider>
         </Box>
       </form>
     </>
