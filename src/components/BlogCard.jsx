@@ -55,16 +55,16 @@ export default function BlogCard({
       {isUser && (
         <Box display={"flex"}>
           <IconButton onClick={handleEdit} sx={{ marginLeft: "auto" }}>
-            <ModeEditIcon color="info" />
+            <ModeEditIcon color="#212121" />
           </IconButton>
           <IconButton onClick={handleDelete}>
-            <DeleteIcon color="error" />
+            <DeleteIcon color="#212121" />
           </IconButton>
         </Box>
       )}
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: "#212121" }} aria-label="recipe">
             {username}
           </Avatar>
         }
