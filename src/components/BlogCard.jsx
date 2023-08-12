@@ -11,6 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import ReactMarkdown from "react-markdown";
 import axios from "axios";
 
 export default function BlogCard({
@@ -73,10 +74,10 @@ export default function BlogCard({
       <CardMedia component="img" height="194" image={image} alt="Paella dish" />
       <CardContent>
         <Typography variant="h6" color="text.secondary">
-          Title : {title}
+           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Description : {description}
+           <ReactMarkdown>{description}</ReactMarkdown>
         </Typography>
       </CardContent>
     </Card>
