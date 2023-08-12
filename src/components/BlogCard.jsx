@@ -77,7 +77,7 @@ export default function BlogCard({
            {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-           <ReactMarkdown>{description}</ReactMarkdown>
+          <ReactMarkdown>{description}</ReactMarkdown>
         </Typography>
       </CardContent>
     </Card>
