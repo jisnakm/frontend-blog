@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, TextField, Button, ThemeProvider, createTheme  } from "@mui/material";
+import { Box, Typography, TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/store";

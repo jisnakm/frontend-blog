@@ -5,12 +5,10 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 
@@ -42,7 +40,7 @@ export default function BlogCard({
   return (
     <Card
       sx={{
-        width: "40%",
+        width: "50%",
         margin: "auto",
         mt: 2,
         padding: 2,
@@ -71,7 +69,7 @@ export default function BlogCard({
         title={username}
         subheader={time}
       />
-      <CardMedia component="img" height="194" image={image} alt="Paella dish" />
+      <CardMedia component="img" height="194" image={image} alt="imge" />
       <CardContent>
         <Typography variant="h6" color="text.secondary">
            {title}

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
+import { Box, Button, InputLabel, TextField, Typography, TextareaAutosize } from "@mui/material";
+
 const BlogDetails = () => {
   const [blog, setBlog] = useState({});
   const id = useParams().id;
@@ -39,8 +40,10 @@ const BlogDetails = () => {
   //form
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const { data } = await axios.put(`http://localhost:3000s/api/v1/blog/update-blog/${id}`, {
+
+      const { data } = await axios.put(`http://localhost:3000/api/v1/blog/update-blog/${id}`, {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,
@@ -56,7 +59,7 @@ const BlogDetails = () => {
   };
   console.log(blog);
   return (
-    <v>
+    <>
       <form onSubmit={handleSubmit}>
         <Box
           width={"50%"}
@@ -96,12 +99,13 @@ const BlogDetails = () => {
           >
             Description
           </InputLabel>
-          <TextField
+          <TextareaAutosize 
             name="description"
             value={inputs.description}
             onChange={handleChange}
             margin="normal"
             variant="outlined"
+            minRows={3}
             required
           />
           <InputLabel
@@ -122,7 +126,7 @@ const BlogDetails = () => {
           </Button>
         </Box>
       </form>
-    </v>
+    </>
   );
 };
 

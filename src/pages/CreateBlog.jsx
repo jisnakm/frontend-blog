@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, InputLabel, TextField, Typography, ThemeProvider, createTheme  } from "@mui/material";
+import { Box, Button, InputLabel, TextField, Typography, ThemeProvider, createTheme, TextareaAutosize  } from "@mui/material";
 import toast from "react-hot-toast";
 
 // Create a custom theme
@@ -87,12 +87,13 @@ const CreateBlog = () => {
           >
             Description
           </InputLabel>
-          <TextField
+          <TextareaAutosize 
             name="description"
             value={inputs.description}
             onChange={handleChange}
             margin="normal"
             variant="outlined"
+            minRows={3}
             required
           />
           <InputLabel

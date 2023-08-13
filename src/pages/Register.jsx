@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import toast from "react-hot-toast";
 import axios from "axios";
+
+
 const Register = () => {
   const navigate = useNavigate();
   //state
@@ -19,6 +21,15 @@ const Register = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  // Create a custom theme
+const theme = createTheme({
+  palette: {
+    black: {
+      main: '#212121',
+    },
+  },
+});
 
   //form handle
   const handleSubmit = async (e) => {
@@ -87,21 +98,25 @@ const Register = () => {
             required
             onChange={handleChange}
           />
-
+          <ThemeProvider theme={theme}>
           <Button
             type="submit"
             sx={{ borderRadius: 3, marginTop: 3 }}
             variant="contained"
-            color="primary"
+            color="black"
+            style={{ color: 'white' }}
           >
             Submit
           </Button>
           <Button
             onClick={() => navigate("/login")}
             sx={{ borderRadius: 3, marginTop: 3 }}
+            style={{ color: 'black' }}
           >
             Already Registerd ? Please Login
           </Button>
+          </ThemeProvider>
+          
         </Box>
       </form>
     </>

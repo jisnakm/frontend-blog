@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //state
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
 
   //logout
   const handleLogout = () => {
